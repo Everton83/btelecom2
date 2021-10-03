@@ -11,28 +11,38 @@
                 <th scope="col">Data</th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Numero</th>
-                <th scope="col">Descrição</th>
+                <th scope="col">Porta 1</th>
+                <th scope="col">Porta 2</th>
+                <th scope="col">Porta 3</th>
+                <th scope="col">Porta 4</th>
+                <th scope="col">Porta 5</th>
+                <th scope="col">Porta 6</th>
                 <th scope="col">Elementos</th>
-                <th scope="col">Porta</th>
+                <th scope="col">Qtd. de Porta</th>
                 <th scope="col">Imagem</th>
             </tr>
         </thead>
         <tbody>
         {% for cat in search_results %}
             <tr>
-                <td>{{cat.criado_em}}</td>
+                <td><h6>{{cat.criado_em}}</h6></td>
                 <td>{{cat.titulo}}</td>
                 <td>{{cat.numero}}</td>
-                <td>{{cat.descricao}}</td>
+                <td>{{cat.porta1}}</td>
+                <td>{{cat.porta2}}</td>
+                <td>{{cat.porta3}}</td>
+                <td>{{cat.porta4}}</td>
+                <td>{{cat.porta5}}</td>
+                <td>{{cat.porta6}}</td>
                 <td>{{cat.elementos}}</td>
-                <td>{{cat.portas}}</td>
+                <td>{{cat.qtd_portas}}</td>
                 <td>
                     <a href="{{ cat.image.url }}" target="_blank">
                         <img src="{{ cat.image.url }}" alt="" class="img-fluid" style="height: 50px; object-fit: cover;">
                     </a>
                 </td>
             </tr>
-        {% endfor %} 
+        {% endfor %}
         </tbody>
     </table>
 
@@ -64,3 +74,4 @@
 
 
 {% endblock %}
+

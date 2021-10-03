@@ -1,8 +1,64 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}form{% endblock title %}
 
 {% block content %}
+
+<div class="container">
+    <h1>Buscando Soluções</h1>
+    <div>
+        <form id="SearchView" action="{% url 'btelecomapp:SearchView' %}" method="GET">
+          <label for="id_porta1">Porta 1:</label>
+                <select name="id_porta1" id="id_porta1">
+                <option selected="selected">----</option>
+                {% for cat in SearchView %}
+                    <option value="{{cat.porta1}}">{{cat.porta1}}</option>
+                {% endfor %}
+                </select>
+
+            <label for="id_porta2">Porta 2:</label>
+                <select name="id_porta2" id="id_porta2">
+                <option selected="selected">----</option>
+                {% for cat in SearchView %}
+                    <option value="{{cat.porta2}}">{{cat.porta2}}</option>
+                {% endfor %}
+                </select>
+
+            <label for="id_porta3">Porta 3:</label>
+                <select name="id_porta3" id="id_porta3">
+                <option selected="selected">----</option>
+                {% for cat in SearchView %}
+                    <option value="{{cat.porta3}}">{{cat.porta3}}</option>
+                {% endfor %}
+                </select>
+
+            <label for="id_porta4">Porta 4:</label>
+                <select name="id_porta4" id="id_porta4">
+                <option selected="selected">----</option>
+                {% for cat in SearchView %}
+                    <option value="{{cat.porta4}}">{{cat.porta4}}</option>
+                {% endfor %}
+                </select>
+
+            <label for="id_porta5">Porta 5:</label>
+                <select name="id_porta5" id="id_porta5">
+                <option selected="selected">----</option>
+                {% for cat in SearchView %}
+                    <option value="{{cat.porta5}}">{{cat.porta5}}</option>
+                {% endfor %}
+                </select>
+
+            <label for="id_porta6">Porta 6:</label>
+                <select name="id_porta6" id="id_porta6">
+                <option selected="selected">----</option>
+                {% for cat in SearchView %}
+                    <option value="{{cat.porta6}}">{{cat.porta6}}</option>
+                {% endfor %}
+                </select>
+            <input class="btn btn-outline-success" type="submit">
+        </form>
+    </div>
+</div>
 
 <div class="container-fluid">
     <table class="table table-hover">
@@ -23,7 +79,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for cat in home %}
+        {% for cat in SearchView %}
             <tr>
                 <td><h6>{{cat.criado_em}}</h6></td>
                 <td>{{cat.titulo}}</td>
@@ -71,7 +127,6 @@
 </nav>
 
 </div>
-
 
 {% endblock %}
 
